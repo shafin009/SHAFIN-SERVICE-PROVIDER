@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import Banner from './BannerPic/banner1.jpg'
+import Banner2 from './BannerPic/banner2.jpg'
+import Banner3 from './BannerPic/banner3.jpg'
 
 
 import { Carousel } from 'react-bootstrap';
@@ -20,38 +22,29 @@ const Homepage = () => {
         <Carousel>
           <Carousel.Item>
             <img
-              className="d-block mx-auto w-75"
-              src={''}
+
+              className="d-block w-100"
+              src={Banner}
               alt="First slide"
             />
-            <Carousel.Caption>
-              <h3>Welcome to Doctor's Time</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
+
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block mx-auto w-75"
-              src={''}
+              className="d-block w-100"
+              src={Banner2}
               alt="Second slide"
             />
 
-            <Carousel.Caption>
-              <h3>Welcome to Doctor's Time</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
+
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block mx-auto w-75"
-              src={''}
+              className="d-block selection:w-100"
+              src={Banner3}
               alt="Third slide"
             />
 
-            <Carousel.Caption>
-              <h3>Welcome to Doctor's Time</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </div>

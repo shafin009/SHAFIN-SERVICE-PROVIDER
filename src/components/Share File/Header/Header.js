@@ -12,7 +12,7 @@ const Header = () => {
 
 
     return (
-        <div>
+        <div className='z-[10000] sticky top-0'>
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="success" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
