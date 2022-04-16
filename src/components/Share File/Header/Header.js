@@ -15,15 +15,15 @@ const Header = () => {
         <div className='z-[10000] sticky top-0'>
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="success" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to="/">
+                    <Navbar.Brand as={Link} to="home">
                         <h2 className='font-sans font-bold text-xl text-cyan-100'>Doctor's Time</h2>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="home">Home</Nav.Link>
-                            <Nav.Link href="home#services">Services</Nav.Link>
-                            <Nav.Link href="home#blog">Blog</Nav.Link>
+                            <Nav.Link as={Link} to="home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="services">Services</Nav.Link>
+                            <Nav.Link as={Link} to="blog">Blog</Nav.Link>
                         </Nav>
                         <Nav>
                             <Nav.Link as={Link} to="about">About</Nav.Link>
