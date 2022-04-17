@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -6,6 +7,14 @@ import React from 'react';
 const ServiceDetails = (props) => {
 
     const { description, name, image, price } = props.doctor;
+
+    const Navigate = useNavigate()
+
+    const BookingPage = () => {
+
+        Navigate('/booking')
+
+    }
 
     return (
         <div>
@@ -17,7 +26,7 @@ const ServiceDetails = (props) => {
                         <p className="card-text"><span className="fw-bold">Description:</span> {description}</p>
                         <hr />
                         <p className="card-text"><span className="fw-bold">Fees:</span> ${price}</p>
-                        <button type="button" class="btn btn-outline-success w-50 mx-auto d-block">Booking</button>
+                        <button type="button" class="btn btn-outline-success w-50 mx-auto d-block" onClick={() => BookingPage()}>Booking</button>
 
                     </div>
                 </div>

@@ -9,6 +9,8 @@ import Blogs from './components/Blogs/Blogs';
 import About from './components/About/About';
 import Login from './components/LoginForm/Login';
 import SignUp from './components/LoginForm/SignUp';
+import Booking from './components/Booking/Booking';
+import RequireAuth from './components/LoginForm/RequireAuth';
 
 
 
@@ -24,7 +26,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp></SignUp>} />
-
+        <Route path='/booking' element={
+          <RequireAuth>
+            <Booking></Booking>
+          </RequireAuth>
+        }></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>

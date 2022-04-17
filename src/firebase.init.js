@@ -1,23 +1,22 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAIGSBqaHCP8n20D0Zg4q4JXpABOpYOobQ",
-    authDomain: "covid-data-d75c5.firebaseapp.com",
-    projectId: "covid-data-d75c5",
-    storageBucket: "covid-data-d75c5.appspot.com",
-    messagingSenderId: "40485991280",
-    appId: "1:40485991280:web:d17a82e87bfd29fa93d5b5"
+    apiKey: "AIzaSyCGe18Sy13YkltfS8r24vgm4IyQZQj9I38",
+    authDomain: "doctor-time-1b067.firebaseapp.com",
+    projectId: "doctor-time-1b067",
+    storageBucket: "doctor-time-1b067.appspot.com",
+    messagingSenderId: "471338750375",
+    appId: "1:471338750375:web:52ab64c6ade8033398a682"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
 
 const auth = getAuth(app);
 
