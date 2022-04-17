@@ -26,9 +26,9 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [sendPasswordResetEmail, Send] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-    if (loading || Send) {
+    if (loading || sending) {
         return <Loading></Loading>
     }
 
@@ -61,7 +61,7 @@ const Login = () => {
 
     return (
         <div className='container w-50 mx-auto'>
-            <h2 className='text-primary text-center mt-2 fs-1'>Login</h2>
+            <h2 className='text-primary text-center mt-2 fs-1 underline'>Login</h2>
             <br />
             <div className="text-center">
                 <img src={login} className="rounded w-75 mx-auto d-block" alt="..." />
@@ -83,7 +83,7 @@ const Login = () => {
                     Log In
                 </Button>
                 {errorDiv}
-                <p>New to Doctor's Time? <Link to="/signup" className='text-primary pe-auto text-decoration-none'>Please Register</Link> </p>
+                <p>New to Shafin Service Provider? <Link to="/signup" className='text-primary pe-auto text-decoration-none'>Signup Here</Link> </p>
                 <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
             </Form>
             <SocialLogin></SocialLogin>

@@ -9,7 +9,7 @@ import Blogs from './components/Blogs/Blogs';
 import About from './components/About/About';
 import Login from './components/LoginForm/Login';
 import SignUp from './components/LoginForm/SignUp';
-import Booking from './components/Booking/Booking';
+import Purchase from './components/Purchase/Purchase';
 import RequireAuth from './components/LoginForm/RequireAuth';
 
 
@@ -27,9 +27,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp></SignUp>} />
-        <Route path='/booking' element={
+        <Route path='/purchase' element={
           <RequireAuth>
-            <Booking></Booking>
+            <Purchase></Purchase>
           </RequireAuth>
         }></Route>
         <Route path="*" element={<NotFound />} />

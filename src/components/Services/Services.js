@@ -1,9 +1,9 @@
 import React from 'react';
-import useDoctor from '../../Hooks/useDoctor';
+import useProvider from '../../Hooks/useProvider';
 import ServiceDetails from '../ServiceDetails/ServiceDetails';
 
 const Services = () => {
-    const [doctors, setDoctors] = useDoctor()
+    const [providers, setProviders] = useProvider()
 
 
     return (
@@ -11,9 +11,9 @@ const Services = () => {
 
             <div className='container row row-cols-1 row-cols-md-3 g-4'>
                 {
-                    doctors.map(doctor => <ServiceDetails
-                        key={doctor.id}
-                        doctor={doctor}
+                    providers.map(provider => <ServiceDetails
+                        key={provider.id}
+                        provider={provider}
 
                     ></ServiceDetails>)
                 }

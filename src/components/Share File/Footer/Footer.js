@@ -44,7 +44,7 @@ const Footer = () => {
 
         </div>
         <div className='text-center text-white pt-10 sm:pt-12 font-light flex items-center justify-center'>
-          All Rights Reserved By &copy; Doctor's Time | {year}
+          All Rights Reserved By &copy; Shafin Service Provider | {year}
         </div>
       </div>
     </footer>

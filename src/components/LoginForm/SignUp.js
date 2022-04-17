@@ -46,7 +46,7 @@ const SignUp = () => {
 
     return (
         <div className='container w-50 mx-auto'>
-            <h2 className='text-primary text-center mt-2 fs-1'>SignUp Here</h2>
+            <h2 className='text-primary text-center mt-2 fs-1 underline'>SignUp Here</h2>
             <br />
             <div className="text-center">
                 <img src={signup} className="rounded w-75 mx-auto d-block" alt="..." />
