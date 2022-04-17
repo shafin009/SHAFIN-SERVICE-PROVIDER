@@ -19,7 +19,7 @@ const Header = () => {
 
 
     return (
-        <div className='z-[10000] sticky top-0'>
+        <div >
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="success" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
@@ -36,7 +36,7 @@ const Header = () => {
                             <Nav.Link as={Link} to="about">About</Nav.Link>
                             {
                                 user ?
-                                    <button onClick={() => handleSignOut()}>Logout</button>
+                                    <button onClick={() => handleSignOut()} className='btn btn-link text-white text-decoration-none'>Logout</button>
                                     :
                                     <Nav.Link as={Link} to="login">Login</Nav.Link>
                             }

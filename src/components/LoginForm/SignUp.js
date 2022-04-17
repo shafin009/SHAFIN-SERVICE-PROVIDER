@@ -19,11 +19,9 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
 
-    const navigateLogin = () => {
-        navigate('/login');
-    }
+
 
     if (loading || updating) {
         return <Loading></Loading>
@@ -31,7 +29,7 @@ const SignUp = () => {
 
 
 
-    const handleRegister = async (event) => {
+    const handleSignUp = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
@@ -41,7 +39,7 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
 
-        navigate('/home');
+        Navigate('/home')
     }
 
 
@@ -49,7 +47,7 @@ const SignUp = () => {
         <div className='container w-50 mx-auto'>
             <h2 className='text-primary text-center mt-2 fs-1'>Please SignUp</h2>
             <br />
-            <Form onSubmit={handleRegister}>
+            <Form onSubmit={handleSignUp}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
 
                     <Form.Control type="name" ref={nameRef} placeholder="Your Name" required />
@@ -68,7 +66,7 @@ const SignUp = () => {
                 <Button variant="btn btn-outline-success w-50 mx-auto d-block" type="submit">
                     Sign Up
                 </Button>
-                <p>Already Have an Account ? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin} >Login</Link> </p>
+                <p>Already Have an Account ? <Link to="/login" className='text-primary pe-auto text-decoration-none' >Login</Link> </p>
             </Form>
             <SocialLogin></SocialLogin>
         </div>

@@ -7,14 +7,15 @@ import card1 from './CardPic/card.png'
 import card2 from './CardPic/card2.png'
 import card3 from './CardPic/card3.png'
 import card4 from './CardPic/card4.png'
-
+import useDoctor from '../../Hooks/useDoctor';
 import { Carousel } from 'react-bootstrap';
+import HomeReview from '../HomeReview/HomeReview';
 
 
 
 const Homepage = () => {
 
-
+  const [doctors, setDoctors] = useDoctor()
 
 
   return (
@@ -92,6 +93,19 @@ const Homepage = () => {
       <br />
       <br />
 
+      <h1 className='text-center text-4xl font-serif underline text-sky-700'>Here Some Services</h1>
+      <br />
+      <div className='container row row-cols-1 row-cols-md-3 g-4'>
+        {
+          doctors.slice(0, 3).map(doctor => <HomeReview
+            key={doctor.id}
+            doctor={doctor}
+
+          ></HomeReview>)
+        }
+
+      </div>
+      <br />
       <Link to='/services'><button className="btn btn-success d-grid gap-2 col-6 mx-auto" >See All Doctors</button>
       </Link>
 

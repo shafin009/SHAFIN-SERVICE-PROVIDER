@@ -47,10 +47,6 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     }
 
-    const navigateRegister = event => {
-        navigate('/register');
-    }
-
     const resetPassword = async () => {
         const email = emailRef.current.value;
         if (email) {
@@ -81,7 +77,8 @@ const Login = () => {
                 <Button variant="btn btn-outline-success w-50 mx-auto d-block" type="submit">
                     Log In
                 </Button>
-                <p>New to Doctor's Time? <Link to="/signup" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister} >Please Register</Link> </p>
+                {errorDiv}
+                <p>New to Doctor's Time? <Link to="/signup" className='text-primary pe-auto text-decoration-none'>Please Register</Link> </p>
                 <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
             </Form>
             <SocialLogin></SocialLogin>
