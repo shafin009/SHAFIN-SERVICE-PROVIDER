@@ -23,7 +23,7 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="success" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
-                        <h2 className='font-sans font-bold text-xl text-cyan-100'>Doctor's Time</h2>
+                        <h2 className='font-sans font-bold text-xl text-cyan-100'>SHAFIN SERVICE PROVIDER</h2>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
