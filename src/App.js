@@ -7,6 +7,8 @@ import NotFound from './components/Share File/NotFound/NotFound';
 import Services from './components/Services/Services'
 import Blogs from './components/Blogs/Blogs';
 import About from './components/About/About';
+import Login from './components/LoginForm/Login';
+import SignUp from './components/LoginForm/SignUp';
 
 
 
@@ -20,7 +22,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/about" element={<About />} />
-
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp></SignUp>} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
