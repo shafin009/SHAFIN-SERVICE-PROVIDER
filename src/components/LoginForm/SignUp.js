@@ -5,6 +5,7 @@ import SocialLogin from './SocialLogin';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../../Hooks/Loading';
+import signup from './signup.jpg'
 
 const SignUp = () => {
     const emailRef = useRef('');
@@ -29,7 +30,7 @@ const SignUp = () => {
 
 
 
-    const handleSignUp = async (event) => {
+    const signUpForm = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
@@ -45,9 +46,13 @@ const SignUp = () => {
 
     return (
         <div className='container w-50 mx-auto'>
-            <h2 className='text-primary text-center mt-2 fs-1'>Please SignUp</h2>
+            <h2 className='text-primary text-center mt-2 fs-1'>SignUp Here</h2>
             <br />
-            <Form onSubmit={handleSignUp}>
+            <div className="text-center">
+                <img src={signup} className="rounded w-75 mx-auto d-block" alt="..." />
+            </div>
+            <br />
+            <Form onSubmit={signUpForm}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
 
                     <Form.Control type="name" ref={nameRef} placeholder="Your Name" required />

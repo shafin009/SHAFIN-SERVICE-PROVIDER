@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import Loading from '../../Hooks/Loading';
+import login from './login.jpg'
 
 
 const Login = () => {
@@ -25,9 +26,9 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail, Send] = useSendPasswordResetEmail(auth);
 
-    if (loading || sending) {
+    if (loading || Send) {
         return <Loading></Loading>
     }
 
@@ -39,7 +40,7 @@ const Login = () => {
         errorDiv = <p className='text-danger'>Error: {error?.message}</p>
     }
 
-    const handleSubmit = event => {
+    const submitForm = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
@@ -51,18 +52,22 @@ const Login = () => {
         const email = emailRef.current.value;
         if (email) {
             await sendPasswordResetEmail(email);
-            toast('Sent email');
+            toast('Reset Mail Sent! Cheak your Mailbox');
         }
         else {
-            toast('please enter your email address');
+            toast('Please Enter your E-mail');
         }
     }
 
     return (
         <div className='container w-50 mx-auto'>
-            <h2 className='text-primary text-center mt-2 fs-1'>Please Login</h2>
+            <h2 className='text-primary text-center mt-2 fs-1'>Login</h2>
             <br />
-            <Form onSubmit={handleSubmit}>
+            <div className="text-center">
+                <img src={login} className="rounded w-75 mx-auto d-block" alt="..." />
+            </div>
+            <br />
+            <Form onSubmit={submitForm}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
 
                     <Form.Control ref={emailRef} type="email" placeholder="Email" required />

@@ -21,16 +21,16 @@ const RequireAuth = ({ children }) => {
 
     if (!user.emailVerified) {
         return <div className='text-center'>
-            <h3 className='text-danger'>Your Email is not verified!!</h3>
-            <h5 className='text-success'> Please Verify your email address</h5>
+            <h3 className='text-danger'>Your Email is not Verified!!</h3>
+            <h5 className='text-success'> Please Verify your E-Mail</h5>
             <button
                 className='btn btn-warning'
                 onClick={async () => {
                     await sendEmailVerification();
-                    toast('Sent email');
+                    toast('Verification Mail Sent! Cheak your Mailbox');
                 }}
             >
-                Send Verification Email Again
+                Send Verification E-Mail again
             </button>
             <ToastContainer></ToastContainer>
         </div>
