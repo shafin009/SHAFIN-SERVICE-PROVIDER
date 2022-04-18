@@ -26,7 +26,7 @@ const HomeReview = (props) => {
                         <p className="card-text"><span className="fw-bold">Description:</span> {description}</p>
                         <hr />
                         <p className="card-text"><span className="fw-bold">Fees:</span> ${price}</p>
-                        <button type="button" class="btn btn-outline-success w-50 mx-auto d-block" onClick={() => purchasePage()}>Booking</button>
+                        <button type="button" class="btn btn-outline-success w-50 mx-auto d-block" onClick={() => purchasePage()}>Purchase</button>
 
                     </div>
                 </div>
