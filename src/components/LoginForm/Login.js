@@ -10,7 +10,9 @@ import Loading from '../../Hooks/Loading';
 import login from './login.jpg'
 
 
+
 const Login = () => {
+
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -52,10 +54,10 @@ const Login = () => {
         const email = emailRef.current.value;
         if (email) {
             await sendPasswordResetEmail(email);
-            toast('Reset Mail Sent! Cheak your Mailbox');
+            toast(' Reset link sent your mailbox')
         }
         else {
-            toast('Please Enter your E-mail');
+            toast('Please Enter your E-mail!');
         }
     }
 
@@ -88,6 +90,7 @@ const Login = () => {
             </Form>
             <SocialLogin></SocialLogin>
             <ToastContainer />
+
         </div>
     );
 };
