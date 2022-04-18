@@ -24,7 +24,7 @@ const Purchase = () => {
             <form className="row g-3 container w-50 mx-auto">
                 <div className="col-md-6">
                     <label for="inputEmail4" className="form-label">Your Full Name</label>
-                    <input type="email" className="form-control" id="inputEmail4" placeholder="Enter Your Full Name" required />
+                    <input type="name" className="form-control" id="inputEmail4" placeholder="Enter Your Full Name" required />
                 </div>
                 <div className="col-12">
                     <label for="inputAddress" className="form-label">Your Address</label>
@@ -68,7 +68,7 @@ const Purchase = () => {
                     <div className="form-check">
                         <input className="form-check-input" type="checkbox" id="gridCheck" required />
                         <label className="form-check-label" for="gridCheck">
-                            Check me out
+                            I accept the terms and conditions
                         </label>
                     </div>
                 </div>

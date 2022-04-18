@@ -130,7 +130,7 @@ const Homepage = () => {
       <br />
       <div className='container row row-cols-1 row-cols-md-3 g-4'>
         {
-          providers.slice(0, 3).map(provider => <HomeReview
+          providers.slice(3, 6).map(provider => <HomeReview
             key={provider.id}
             provider={provider}
 

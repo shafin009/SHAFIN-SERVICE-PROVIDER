@@ -3,6 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div>
+            <br />
             <div class="card text-center">
                 <div class="card-header">
                     Question-1. What is the difference between Authorization and Authentication ?
