@@ -7,7 +7,7 @@ const Footer = () => {
 
 
   return (
-    <footer className='body bg-black  w-full py-8 mt-8'>
+    <footer className='body bg-cyan-700 w-full py-8 mt-8'>
       <div className='max-w-screen-xl mx-auto px-4'>
         <div className=' flex max-w-xs mx-auto items-center justify-evenly '>
           <a target="_blank"
@@ -44,8 +44,12 @@ const Footer = () => {
 
         </div>
         <div className='text-center text-white pt-10 sm:pt-12 font-light flex items-center justify-center'>
-          All Rights Reserved By &copy; Shafin Service Provider | {year}
+          Terms and Conditions || Privacy Policy || Complaint
         </div>
+        <div className='text-center text-white pt-10 sm:pt-12 font-light flex items-center justify-center'>
+          All Rights Reserved By &copy; Covid Vaccine WearHouse || {year}
+        </div>
+
       </div>
     </footer>
   )

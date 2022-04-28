@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../../Hooks/Loading';
-import signup from './signup.jpg'
+
 
 const SignUp = () => {
     const emailRef = useRef('');
@@ -45,34 +45,50 @@ const SignUp = () => {
 
 
     return (
-        <div className='container w-50 mx-auto'>
-            <h2 className='text-primary text-center mt-2 fs-1 underline'>SignUp Here</h2>
-            <br />
-            <div className="text-center">
-                <img src={signup} className="rounded w-75 mx-auto d-block" alt="..." />
+        <div>
+            <div className="d-flex justify-content-center py-5">
+                <div className=" px-5 py-5">
+                    <div >
+                        <h2 className="text-center">Sign Up</h2>
+                        <form onSubmit={signUpForm} className="">
+                            <br />
+                            <input
+                                ref={nameRef}
+                                className="mt-2 px-2 py-1 border"
+                                type="text"
+                                placeholder="Your Name"
+                            />
+                            <input
+                                ref={emailRef}
+                                className="mt-2 px-2 py-1 border"
+                                type="email"
+                                placeholder="Email"
+                            />
+                            <br />
+                            <input
+                                ref={passwordRef}
+                                className="mt-2 px-2 py-1 border"
+                                type="password"
+                                placeholder="Password"
+                            />
+                            <br />
+                            <Button variant="btn btn-outline-success w-50 mt-4 mx-auto d-block" type="submit">
+                                Sign Up
+                            </Button>
+
+
+                            <Link
+                                to="/login"
+                                className="text-primary fw-bold d-block text-decoration-none mt-2"
+                            >
+                                Already an account?
+                            </Link>
+
+
+                        </form>
+                    </div>
+                </div>
             </div>
-            <br />
-            <Form onSubmit={signUpForm}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-
-                    <Form.Control type="name" ref={nameRef} placeholder="Your Name" required />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-
-                    <Form.Control type="email" ref={emailRef} placeholder="Your Email" required />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-
-                    <Form.Control type="password" ref={passwordRef} placeholder="Password" required />
-                </Form.Group>
-
-
-                <Button variant="btn btn-outline-success w-50 mx-auto d-block" type="submit">
-                    Sign Up
-                </Button>
-                <p>Already Have an Account ? <Link to="/login" className='text-primary pe-auto text-decoration-none' >Login</Link> </p>
-            </Form>
             <SocialLogin></SocialLogin>
         </div>
     );

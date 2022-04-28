@@ -20,20 +20,20 @@ const Header = () => {
 
     return (
         <div >
-            <Navbar collapseOnSelect expand="lg" sticky='top' bg="success" variant="dark">
+            <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
-                        <h2 className='font-sans font-bold text-xl text-cyan-100'>SHAFIN SERVICE PROVIDER</h2>
+                        <h2 className='font-sans font-bold text-xl text-cyan-100'>Covid Vaccine WearHouse</h2>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link as={Link} to="services">Services</Nav.Link>
-                            <Nav.Link as={Link} to="blogs">Blogs</Nav.Link>
+
+                            <Nav.Link as={Link} to="inventory">Inventory</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to="about">About</Nav.Link>
+                            <Nav.Link as={Link} to="blogs">Blogs</Nav.Link>
                             {
                                 user ?
                                     <button onClick={() => handleSignOut()} className='btn btn-link text-white text-decoration-none'>Logout</button>

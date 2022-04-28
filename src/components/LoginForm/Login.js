@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import Loading from '../../Hooks/Loading';
-import login from './login.jpg'
+
 
 
 
@@ -39,7 +39,7 @@ const Login = () => {
     }
 
     if (error) {
-        errorDiv = <p className='text-danger'>Error: {error?.message}</p>
+        errorDiv = <p className='text-danger text-center'>Error: {error?.message}</p>
     }
 
     const submitForm = event => {
@@ -62,32 +62,45 @@ const Login = () => {
     }
 
     return (
-        <div className='container w-50 mx-auto'>
-            <h2 className='text-primary text-center mt-2 fs-1 underline'>Login</h2>
-            <br />
-            <div className="text-center">
-                <img src={login} className="rounded w-75 mx-auto d-block" alt="..." />
+        <div>
+            <div className="d-flex justify-content-center py-5">
+                <div className=" px-5 py-5">
+                    <div >
+                        <h2 className="text-center">Log In</h2>
+                        <form onSubmit={submitForm} className="">
+                            <br />
+                            <input
+                                ref={emailRef}
+                                className="mt-2 px-2 py-1 border"
+                                type="email"
+                                placeholder="Email"
+                            />
+                            <br />
+                            <input
+                                ref={passwordRef}
+                                className="mt-2 px-2 py-1 border"
+                                type="password"
+                                placeholder="Password"
+                            />
+                            <br />
+                            <Button variant="btn btn-outline-success w-50 mt-4 mx-auto d-block" type="submit">
+                                Log In
+                            </Button>
+
+
+                            <Link
+                                to="/signup"
+                                className="text-primary fw-bold d-block text-decoration-none mt-2"
+                            >
+                                Don't have an account?
+                            </Link>
+
+                            <button className='btn btn-link text-danger fw-bold d-block mb-3 text-decoration-none' onClick={resetPassword}>Reset Password</button>
+                            {errorDiv}
+                        </form>
+                    </div>
+                </div>
             </div>
-            <br />
-            <Form onSubmit={submitForm}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-
-                    <Form.Control ref={emailRef} type="email" placeholder="Email" required />
-
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-                </Form.Group>
-
-                <Button variant="btn btn-outline-success w-50 mx-auto d-block" type="submit">
-                    Log In
-                </Button>
-                {errorDiv}
-                <p>New to Shafin Service Provider? <Link to="/signup" className='text-primary pe-auto text-decoration-none'>Signup Here</Link> </p>
-                <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
-            </Form>
             <SocialLogin></SocialLogin>
             <ToastContainer />
 
